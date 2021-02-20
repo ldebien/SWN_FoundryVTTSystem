@@ -118,9 +118,9 @@
       "path": "lang/en.json"
     }
   ],
-  "gridDistance": 5,
-  "gridUnits": "ft",
-  "url": "https://gitlab.com/Laurent_Gabsee/foundryvtt-wwn",
-  "manifest": "https://gitlab.com/Laurent_Gabsee/foundryvtt-wwn/-/raw/master/system.json",
-  "download": "https://gitlab.com/Laurent_Gabsee/foundryvtt-wwn/-/archive/master/foundryvtt-wwn-master.zip"
+  "gridDistance": 2,
+  "gridUnits": "m",
+  "url": "https://github.com/ldebien/SWN_FoundryVTTSystem",
+  "manifest": "https://raw.githubusercontent.com/ldebien/SWN_FoundryVTTSystem/main/system.json",
+  "download": "https://github.com/ldebien/SWN_FoundryVTTSystem/archive/main.zip"
 }
