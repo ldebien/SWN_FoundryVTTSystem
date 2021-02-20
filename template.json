@@ -1,0 +1,414 @@
+{
+  "Actor": {
+    "types": ["character", "monster"],
+    "templates": {
+      "common": {
+        "retainer": {
+          "enabled": false,
+          "morale": 0,
+          "wage": ""
+        },
+        "ac": {
+          "value": 0,
+          "mod": 0
+        },
+        "aac": {
+          "value": 0,
+          "mod": 0
+        },
+        "thac0": {
+          "value": 19,
+          "bba": 0,
+          "mod": {
+            "missile": 0,
+            "melee": 0
+          }
+        },
+        "saves": {
+          "evasion": {
+            "value": 0,
+            "mod": 0
+          },
+          "mental": {
+            "value": 0,
+            "mod": 0
+          },
+          "physical": {
+            "value": 0,
+            "mod": 0
+          },
+          "luck": {
+            "value": 0,
+            "mod": 0
+          }
+        },
+        "movement": {
+          "base": 30,
+          "exploration": 90,
+          "overland": 24,
+          "bonus": 0
+        },
+        "initiative": {
+          "value": 0,
+          "mod": 0
+        },
+        "currency": {
+          "cp": 0,
+          "sp": 0,
+          "ep": 0,
+          "gp": 0,
+          "pp": 0,
+          "bank": 0,
+          "total": 0
+      }
+      },
+      "spellcaster": {
+        "spells": {
+          "enabled": false,
+          "perDay": {
+            "value": 0,
+            "max": 0
+          },
+          "1": {
+            "max": 0
+          },
+          "2": {
+            "max": 0
+          },
+          "3": {
+            "max": 0
+          },
+          "4": {
+            "max": 0
+          },
+          "5": {
+            "max": 0
+          }
+        },
+        "classes": {
+          "effort1": {
+            "name": "",
+            "value": 1,
+            "max": 1
+          },
+          "effort2": {
+            "name": "",
+            "value": 1,
+            "max": 1
+          },
+          "effort3": {
+            "name": "",
+            "value": 1,
+            "max": 1
+          }
+      }
+      }
+    },
+    "character": {
+      "templates": ["common", "spellcaster"],
+      "config": {
+        "movementAuto": true
+      },
+      "details": {
+        "biography": "",
+        "notes": "",
+        "class": "",
+        "background": "",
+        "alignment": "",
+        "level": 1,
+        "xp": {
+          "share": 100,
+          "next": 3,
+          "value": 0,
+          "bonus": 0
+        },
+        "strain": {
+          "value": 0,
+          "max": 10
+        },
+        "renown": {
+          "value": 0,
+          "spent": 0,
+          "total": 0
+        }
+      },
+      "character": true,
+      "warrior": false,
+      "hp": {
+        "hd": "1d6",
+        "value": 4,
+        "max": 4
+      },
+      "skills": {
+        "administer": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "connect": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "convince": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "craft": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "exert": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "heal": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "know": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "lead": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "magic": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "notice": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "perform": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "pray": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "punch": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "ride": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "sail": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "shoot": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "sneak": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "stab": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "survive": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "trade": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "work": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "biopsionics": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "metapsionics": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "precognition": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "telekinesis": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "telepathy": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "teleportation": {
+          "value": -1,
+          "dice": "2d6"
+        },
+        "unspent:": 0
+      },
+      "scores": {
+        "str": {
+          "value": 0,
+          "bonus": 0,
+          "mod": 0,
+          "tweak": 0
+        },
+        "int": {
+          "value": 0,
+          "bonus": 0,
+          "mod": 0,
+          "tweak": 0
+        },
+        "wis": {
+          "value": 0,
+          "bonus": 0,
+          "mod": 0,
+          "tweak": 0
+        },
+        "dex": {
+          "value": 0,
+          "bonus": 0,
+          "mod": 0,
+          "tweak": 0
+        },
+        "con": {
+          "value": 0,
+          "bonus": 0,
+          "mod": 0,
+          "tweak": 0
+        },
+        "cha": {
+          "value": 0,
+          "bonus": 0,
+          "mod": 0,
+          "tweak": 0
+        }
+      },
+      "encumbrance": {
+        "readied": {
+          "max": 5,
+          "value": 0
+        },
+        "stowed": {
+          "max": 10,
+          "value": 0
+        }
+      },
+      "languages": {
+        "value": []
+      }
+    },
+    "monster": {
+      "templates": ["common", "spellcaster"],
+      "details": {
+        "biography": "",
+        "alignment": "",
+        "xp": 0,
+        "treasure": {
+          "table": "",
+          "type": ""
+        },
+        "appearing": {
+          "d": 0,
+          "w": 0
+        },
+        "morale": 0,
+        "instinct": 0,
+        "instinctTable": {
+          "table": "",
+          "link": ""
+        },
+        "skill": 0
+      },
+      "attacks": "",
+      "character": false,
+      "hp": {
+        "hd": "1d8",
+        "value": 4,
+        "max": 4
+      }
+    }
+  },
+  "Item": {
+    "types": ["item", "weapon", "armor", "spell", "art", "focus"],
+    "item": {
+      "description": "",
+      "quantity": 1,
+      "treasure": false,
+      "price": 0,
+      "weight": 0,
+      "equipped": false,
+      "stowed": false,
+      "version": 3
+    },
+  "weapon": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "save": "",
+    "pattern": "transparent",
+    "description": "",
+    "damage": "1d6",
+    "bonus": 0,
+    "skillDamage": false,
+    "shock": {
+      "damage": "1",
+      "ac": "15"
+    },
+    "skill": "",
+    "score": "",
+    "tags": [],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "price": 0,
+    "weight": 0,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "armor": {
+    "description": "",
+    "ac": 9,
+    "aac": 10,
+    "type": "light",
+    "price": 0,
+    "weight": 0
+  },
+  "spell": {
+    "lvl": 1,
+    "class": "High Mage",
+    "duration": "",
+    "range": "",
+    "roll": "",
+    "description": "",
+    "prepared": true,
+    "cast": 0,
+    "save": ""
+  },
+  "art": {
+    "pattern": "white",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "",
+    "save": "",
+    "source": "High Mage",
+    "effort": 0,
+    "time": "Scene",
+    "range": ""
+  },
+  "focus": {
+    "description": "",
+    "ownedLevel": 1
+  }
+}
+}

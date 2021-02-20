@@ -1,0 +1,126 @@
+{
+  "name": "swn",
+  "title": "Stars Without Number Revised Edition",
+  "description": "Play Stars Without Number on Foundry VTT",
+  "version": "0.8.5.01",
+  "minimumCoreVersion": "0.7.5",
+  "compatibleCoreVersion": "0.7.9",
+  "templateVersion": 5.7,
+  "author": "LoloDev",
+  "esmodules": [
+    "wwn.js"
+  ],
+  "styles": [
+    "wwn.css"
+  ],
+  "packs": [
+    {
+      "name": "instinct",
+      "label": "Instinct",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/instinct.db",
+      "entity": "RollTable"
+    },
+    {
+      "name": "armor",
+      "label": "Armor",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/armor.db",
+      "entity": "Item"
+    },
+    {
+      "name": "weapons",
+      "label": "Weapons",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "arts",
+      "label": "Arts",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/arts.db",
+      "entity": "Item"
+    },
+    {
+      "name": "foci",
+      "label": "Foci and Abilities",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/foci.db",
+      "entity": "Item"
+    },
+    {
+      "name": "spells",
+      "label": "Spells",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/spells.db",
+      "entity": "Item"
+    },
+    {
+      "name": "adventuring-gear",
+      "label": "Adventuring Gear",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/adventuring-gear.db",
+      "entity": "Item"
+    },
+    {
+      "name": "magic-items",
+      "label": "Magic Items",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/magic-items.db",
+      "entity": "Item"
+    },
+    {
+      "name": "magic-tables",
+      "label": "Magic Item Tables",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/magic-tables.db",
+      "entity": "RollTable"
+    },
+    {
+      "name": "magic-item-masters",
+      "label": "Magic Item Masters",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/magic-item-masters.db",
+      "entity": "RollTable"
+    },
+    {
+      "name": "gm-subtables",
+      "label": "GM Subtables",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/gm-subtables.db",
+      "entity": "RollTable"
+    },
+    {
+      "name": "gm-master-tables",
+      "label": "GM Master Tables",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/gm-master-tables.db",
+      "entity": "RollTable"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "url": "https://gitlab.com/Laurent_Gabsee/foundryvtt-wwn",
+  "manifest": "https://gitlab.com/Laurent_Gabsee/foundryvtt-wwn/-/raw/master/system.json",
+  "download": "https://gitlab.com/Laurent_Gabsee/foundryvtt-wwn/-/archive/master/foundryvtt-wwn-master.zip"
+}
