@@ -2,7 +2,7 @@
   "name": "swn",
   "title": "Stars Without Number Revised Edition",
   "description": "Play Stars Without Number on Foundry VTT",
-  "version": "0.8.5.01",
+  "version": "0.8.5.02",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 5.7,
