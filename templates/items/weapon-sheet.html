@@ -70,6 +70,12 @@
             <input type="number" name="data.range.long" value="{{data.range.long}}" data-dtype="Number" />
           </div>
         </div>
+        <div class="form-group block-input">
+          <label>{{localize 'WWN.items.Mag'}}</label>
+          <div class="form-fields range">
+            <input type="number" name="data.mag" value="{{data.mag}}" data-dtype="Number" />
+          </div>
+        </div>
         {{/if}}
         {{if data.melee}}
         <div class="form-group block-input">
@@ -124,6 +130,12 @@
                 {{/each}}
                 {{/select}}
               </select>
+            </div>
+          </div>
+          <div class="form-group block-input">
+            <label>{{localize 'WWN.items.TL'}}</label>
+            <div class="form-fields range">
+              <input type="number" name="data.mag" value="{{data.mag}}" data-dtype="Number" />
             </div>
           </div>
         </div>

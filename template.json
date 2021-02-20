@@ -351,6 +351,7 @@
       "medium": 0,
       "long": 0
     },
+    "mag": 0,
     "save": "",
     "pattern": "transparent",
     "description": "",
@@ -358,8 +359,8 @@
     "bonus": 0,
     "skillDamage": false,
     "shock": {
-      "damage": "1",
-      "ac": "15"
+      "damage": "0",
+      "ac": "0"
     },
     "skill": "",
     "score": "",
@@ -372,7 +373,8 @@
     "counter": {
       "value": 0,
       "max": 0
-    }
+    },
+    "tl": 4
   },
   "armor": {
     "description": "",

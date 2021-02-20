@@ -252,6 +252,8 @@
   "WWN.items.bank.long": "Bank (Silver)",
   "WWN.items.total.short": "Total (SP)",
   "WWN.items.total.long": "Total Silver Value",
+  "WWN.items.TL": "TL",
+  "WWN.items.Mag": "Mag.",
 
   "WWN.items.Range": "Range",
   "WWN.items.desc.Range": "Ranged Weapon",
