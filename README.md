@@ -5,7 +5,7 @@ Find the Worlds Without Number project by SobranDM here: https://gitlab.com/sobr
 
 ## Features
 * Testing in progress
-* 
+
 ## TODO
 * To be determined
 
