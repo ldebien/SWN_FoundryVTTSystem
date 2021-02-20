@@ -48,15 +48,6 @@
             <input type="text" name="data.damage" value="{{data.damage}}" data-dtype="String" />
           </div>
         </div>
-        <div class="form-group block-input">
-          <label>{{localize 'WWN.items.Shock'}}</label>
-          <div class="form-fields">
-            <input type="number" name="data.shock.damage" value="{{data.shock.damage}}" data-dtype="String" 
-            placeholder="{{localize 'WWN.items.Damage'}}" title="{{localize 'WWN.items.ShockDamage'}}" />
-            <input type="number" name="data.shock.ac" value="{{data.shock.ac}}" data-dtype="String"
-            placeholder="{{localize 'WWN.items.ArmorAC'}}" title="{{localize 'WWN.items.ShockAC'}}" />
-          </div>
-        </div>
         <div class="form-group">
           <label title="{{localize 'WWN.items.AtkBonus'}}">{{localize
             'WWN.items.Bonus'}}</label>
@@ -80,9 +71,20 @@
           </div>
         </div>
         {{/if}}
+        {{if data.melee}}
         <div class="form-group block-input">
-          
-          <label title={{localize 'WWN.attribute'}}>{{localize 'WWN.attribute'}}</label>
+          <label>{{localize 'WWN.items.Shock'}}</label>
+          <div class="form-fields">
+            <input type="number" name="data.shock.damage" value="{{data.shock.damage}}" data-dtype="String"
+              placeholder="{{localize 'WWN.items.Damage'}}" title="{{localize 'WWN.items.ShockDamage'}}" />
+            <input type="number" name="data.shock.ac" value="{{data.shock.ac}}" data-dtype="String"
+              placeholder="{{localize 'WWN.items.ArmorAC'}}" title="{{localize 'WWN.items.ShockAC'}}" />
+          </div>
+        </div>
+        {{/if}}
+        <div class="form-group block-input">
+
+          <label title={{localize 'WWN.attribute' }}>{{localize 'WWN.attribute'}}</label>
           <div class="form-fields">
             <select name="data.score">
               {{#select data.score}}
@@ -93,7 +95,7 @@
             </select>
           </div>
           <div class="form-group block-input">
-            <label title={{localize 'WWN.skill'}}>{{localize 'WWN.skill'}}</label>
+            <label title={{localize 'WWN.skill' }}>{{localize 'WWN.skill'}}</label>
             <div class="form-fields">
               <select name="data.skill">
                 {{#select data.skill}}
@@ -107,11 +109,12 @@
           <div class="form-group">
             <label title="{{localize 'WWN.items.SkillDamageLong'}}">{{localize 'WWN.items.SkillDamageShort'}}</label>
             <div class="form-fields">
-              <input type="checkbox" name="data.skillDamage" value="{{data.skillDamage}}" {{checked data.skillDamage}}  data-dtype="Boolean" title="{{localize 'WWN.items.SkillDamageLong'}}" />
+              <input type="checkbox" name="data.skillDamage" value="{{data.skillDamage}}" {{checked data.skillDamage}}
+                data-dtype="Boolean" title="{{localize 'WWN.items.SkillDamageLong'}}" />
             </div>
           </div>
           <div class="form-group block-input">
-            <label title={{localize 'WWN.spells.Save'}}>{{localize 'WWN.spells.Save'}}</label>
+            <label title={{localize 'WWN.spells.Save' }}>{{localize 'WWN.spells.Save'}}</label>
             <div class=form-fields>
               <select name="data.save">
                 {{#select data.save}}
