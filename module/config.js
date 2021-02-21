@@ -54,10 +54,10 @@ export const SWN = {
   },
   armor : {
     unarmored: "SWN.armor.unarmored",
-    light: "SWN.armor.light",
-    medium: "SWN.armor.medium",
-    heavy: "SWN.armor.heavy",
-    shield: "SWN.armor.shield",
+    primitive: "SWN.armor.primitive",
+    street: "SWN.armor.street",
+    combat: "SWN.armor.combat",
+    powered: "SWN.armor.powered",
   },
   colors: {
     green: "SWN.colors.green",

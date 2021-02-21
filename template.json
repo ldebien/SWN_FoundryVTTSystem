@@ -380,9 +380,10 @@
       "description": "",
       "ac": 9,
       "aac": 10,
-      "type": "light",
+      "type": "primitive",
       "price": 0,
-      "weight": 0
+      "weight": 0,
+      "tl": "4"
     },
     "spell": {
       "lvl": 1,

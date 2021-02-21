@@ -288,10 +288,10 @@
 
   "SWN.armor.type": "Armor Type",
   "SWN.armor.unarmored": "Unarmored",
-  "SWN.armor.light": "Light",
-  "SWN.armor.medium": "Medium",
-  "SWN.armor.heavy": "Heavy",
-  "SWN.armor.shield": "Shield",
+  "SWN.armor.primitive": "Primitive",
+  "SWN.armor.street": "Street",
+  "SWN.armor.combat": "Combat",
+  "SWN.armor.powered": "Powered",
 
   "SWN.spells.spend": "{speaker} is casting {name}!",
   "SWN.spells.Prepared": "Prepared",
