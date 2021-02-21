@@ -29,27 +29,20 @@
           placeholder="-1" />
       </div>
     </li>
-    <li class="attribute flexrow" data-skills="convince">
-      <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.convince'}}">
-        <a>{{ localize "SWN.skills.convince" }}</a></h4>
-      <div class="attribute-value">
-        <input name="data.skills.convince.value" type="number" value="{{data.skills.convince.value}}" data-dtype="Number"
-          placeholder="-1" />
-      </div>
-    </li>
-    <li class="attribute flexrow" data-skills="craft">
-      <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.craft'}}">
-        <a>{{ localize "SWN.skills.craft" }}</a></h4>
-      <div class="attribute-value">
-        <input name="data.skills.craft.value" type="number" value="{{data.skills.craft.value}}" data-dtype="Number"
-          placeholder="-1" />
-      </div>
-    </li>
     <li class="attribute flexrow" data-skills="exert">
       <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.exert'}}">
         <a>{{ localize "SWN.skills.exert" }}</a></h4>
       <div class="attribute-value">
         <input name="data.skills.exert.value" type="number" value="{{data.skills.exert.value}}" data-dtype="Number"
+          placeholder="-1" />
+      </div>
+    </li>
+    <li class="attribute flexrow" data-skills="fix">
+      <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.fix'}}">
+        <a>{{ localize "SWN.skills.fix" }}</a>
+      </h4>
+      <div class="attribute-value">
+        <input name="data.skills.fix.value" type="number" value="{{data.skills.fix.value}}" data-dtype="Number"
           placeholder="-1" />
       </div>
     </li>
@@ -61,6 +54,8 @@
           placeholder="-1" />
       </div>
     </li>
+  </div>
+  <div class="attributes skills">
     <li class="attribute flexrow" data-skills="know">
       <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.know'}}">
         <a>{{ localize "SWN.skills.know" }}</a></h4>
@@ -69,8 +64,6 @@
           placeholder="-1" />
       </div>
     </li>
-  </div>
-  <div class="attributes skills">
     <li class="attribute flexrow" data-skills="lead">
       <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.lead'}}">
         <a>{{ localize "SWN.skills.lead" }}</a></h4>
@@ -103,11 +96,22 @@
           placeholder="-1" />
       </div>
     </li>
-    <li class="attribute flexrow" data-skills="pray">
-      <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.pray'}}">
-        <a>{{ localize "SWN.skills.pray" }}</a></h4>
+  </div>
+  <div class="attributes skills">
+    <li class="attribute flexrow" data-skills="pilot">
+      <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.pilot'}}">
+        <a>{{ localize "SWN.skills.pilot" }}</a></h4>
       <div class="attribute-value">
-        <input name="data.skills.pray.value" type="number" value="{{data.skills.pray.value}}" data-dtype="Number"
+        <input name="data.skills.pilot.value" type="number" value="{{data.skills.pilot.value}}" data-dtype="Number"
+          placeholder="-1" />
+      </div>
+    </li>
+    <li class="attribute flexrow" data-skills="program">
+      <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.program'}}">
+        <a>{{ localize "SWN.skills.program" }}</a>
+      </h4>
+      <div class="attribute-value">
+        <input name="data.skills.program.value" type="number" value="{{data.skills.program.value}}" data-dtype="Number"
           placeholder="-1" />
       </div>
     </li>
@@ -116,24 +120,6 @@
         <a>{{ localize "SWN.skills.punch" }}</a></h4>
       <div class="attribute-value">
         <input name="data.skills.punch.value" type="number" value="{{data.skills.punch.value}}" data-dtype="Number"
-          placeholder="-1" />
-      </div>
-    </li>
-    <li class="attribute flexrow" data-skills="ride">
-      <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.ride'}}">
-        <a>{{ localize "SWN.skills.ride" }}</a></h4>
-      <div class="attribute-value">
-        <input name="data.skills.ride.value" type="number" value="{{data.skills.ride.value}}" data-dtype="Number"
-          placeholder="-1" />
-      </div>
-    </li>
-  </div>
-  <div class="attributes skills">
-    <li class="attribute flexrow" data-skills="sail">
-      <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.sail'}}">
-        <a>{{ localize "SWN.skills.sail" }}</a></h4>
-      <div class="attribute-value">
-        <input name="data.skills.sail.value" type="number" value="{{data.skills.sail.value}}" data-dtype="Number"
           placeholder="-1" />
       </div>
     </li>
@@ -153,6 +139,8 @@
           placeholder="-1" />
       </div>
     </li>
+  </div>
+  <div class="attributes skills">
     <li class="attribute flexrow" data-skills="stab">
       <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.stab'}}">
         <a>{{ localize "SWN.skills.stab" }}</a></h4>
@@ -166,6 +154,15 @@
         <a>{{ localize "SWN.skills.survive" }}</a></h4>
       <div class="attribute-value">
         <input name="data.skills.survive.value" type="number" value="{{data.skills.survive.value}}" data-dtype="Number"
+          placeholder="-1" />
+      </div>
+    </li>
+    <li class="attribute flexrow" data-skills="talk">
+      <h4 class="attribute-name box-title" title="{{localize 'SWN.skills.desc.talk'}}">
+        <a>{{ localize "SWN.skills.talk" }}</a>
+      </h4>
+      <div class="attribute-value">
+        <input name="data.skills.talk.value" type="number" value="{{data.skills.talk.value}}" data-dtype="Number"
           placeholder="-1" />
       </div>
     </li>
