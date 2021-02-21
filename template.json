@@ -343,7 +343,8 @@
       "weight": 0,
       "equipped": false,
       "stowed": false,
-      "version": 3
+      "version": 3,
+      "tl": "4"
     },
     "weapon": {
       "range": {
