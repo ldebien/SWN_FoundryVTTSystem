@@ -19,7 +19,7 @@ export class SwnItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["swn", "sheet", "item"],
       width: 550,
-      height: 510,
+      height: 530,
       resizable: false,
       tabs: [
         {
