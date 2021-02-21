@@ -1,6 +1,6 @@
-<div class="wwn chat-card item-card" data-actor-id="{{data.actor._id}}" data-item-id="{{data.item._id}}"
+<div class="swn chat-card item-card" data-actor-id="{{data.actor._id}}" data-item-id="{{data.item._id}}"
     {{#if tokenId}}data-token-id="{{tokenId}}" {{/if}}>
-    <div class="wwn chat-block">
+    <div class="swn chat-block">
         <div class="flexrow chat-header">
             <div class="chat-title">
                 <h2>{{title}}</h2>
@@ -20,27 +20,27 @@
             <div class="chat-details">
                 <div class="roll-result">{{{result.details}}}</div>
             </div>
-            {{#if rollWWN}}<div>{{{rollWWN}}}</div>{{/if}}
+            {{#if rollSWN}}<div>{{{rollSWN}}}</div>{{/if}}
             {{#if result.isSuccess}}
             <div class="chat-details">
-                <div class="roll-result"><b>{{localize 'WWN.messages.InflictsDamage'}}</b></div>
+                <div class="roll-result"><b>{{localize 'SWN.messages.InflictsDamage'}}</b></div>
             </div>
             <div class="damage-roll">{{{rollDamage}}}</div>
             {{#if data.item.data.shock.damage}}
             {{#if data.item.data.shock.ac}}
             <div class="chat-details">
-                <div class="roll-result"><b>{{localize 'WWN.messages.applyShock1'}}
+                <div class="roll-result"><b>{{localize 'SWN.messages.applyShock1'}}
                     {{data.item.data.shockTotal}}
-                    {{localize 'WWN.messages.applyShock2'}}{{data.item.data.shock.ac}}
-                    {{localize 'WWN.messages.applyShock3'}}</b>
+                    {{localize 'SWN.messages.applyShock2'}}{{data.item.data.shock.ac}}
+                    {{localize 'SWN.messages.applyShock3'}}</b>
                 </div>
             </div>
             {{/if}}
             {{#unless data.item.data.shock.ac}}
             <div class="chat-details">
-                <div class="roll-result"><b>{{localize 'WWN.messages.applyShock1'}}
+                <div class="roll-result"><b>{{localize 'SWN.messages.applyShock1'}}
                     {{data.item.data.shockTotal}}
-                    {{localize 'WWN.messages.applyShockAlt'}}</b>
+                    {{localize 'SWN.messages.applyShockAlt'}}</b>
                 </div>
             </div>
             {{/unless}}
@@ -48,7 +48,7 @@
             {{#if data.roll.save}}
             <div class="card-buttons">
                 <button data-action="save" data-save="{{data.roll.save}}" disabled>
-                    {{lookup config.saves data.roll.save}} - {{localize "WWN.spells.Save"}}
+                    {{lookup config.saves data.roll.save}} - {{localize "SWN.spells.Save"}}
                 </button>
             </div>
             {{/if}}

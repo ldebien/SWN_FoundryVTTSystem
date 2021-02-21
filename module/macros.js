@@ -10,13 +10,13 @@
  * @param {number} slot     The hotbar slot to use
  * @returns {Promise}
  */
-export async function createWwnMacro(data, slot) {
+export async function createSwnMacro(data, slot) {
     if ( data.type !== "Item" ) return;
     if (!( "data" in data ) ) return ui.notifications.warn("You can only create macro buttons for owned Items");
     const item = data.data;
   
     // Create the macro command
-    const command = `game.wwn.rollItemMacro("${item.name}");`;
+    const command = `game.swn.rollItemMacro("${item.name}");`;
     let macro = game.macros.entities.find(m => (m.name === item.name) && (m.command === command));
     if ( !macro ) {
       macro = await Macro.create({
@@ -24,7 +24,7 @@ export async function createWwnMacro(data, slot) {
         type: "script",
         img: item.img,
         command: command,
-        flags: {"WWN.itemMacro": true}
+        flags: {"SWN.itemMacro": true}
       });
     }
     game.user.assignHotbarMacro(macro, slot);
@@ -48,7 +48,7 @@ export async function createWwnMacro(data, slot) {
     // Get matching items
     const items = actor ? actor.items.filter(i => i.name === itemName) : [];
     if ( items.length > 1 ) {
-      ui.notifications.warn(`Your controlled Actor ${actor.name} has more than one Item with name ${itemName}. The first matched item will be chwwnn.`);
+      ui.notifications.warn(`Your controlled Actor ${actor.name} has more than one Item with name ${itemName}. The first matched item will be chswnn.`);
     } else if ( items.length === 0 ) {
       return ui.notifications.warn(`Your controlled Actor does not have an item named ${itemName}`);
     }

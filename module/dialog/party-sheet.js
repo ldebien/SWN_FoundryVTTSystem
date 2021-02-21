@@ -1,11 +1,11 @@
-import { WwnPartyXP } from "./party-xp.js";
+import { SwnPartyXP } from "./party-xp.js";
 
-export class WwnPartySheet extends FormApplication {
+export class SwnPartySheet extends FormApplication {
   
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["wwn", "dialog", "party-sheet"],
-      template: "systems/wwn/templates/apps/party-sheet.html",
+      classes: ["swn", "dialog", "party-sheet"],
+      template: "systems/swn/templates/apps/party-sheet.html",
       width: 310,
       height: 400,
       resizable: true,
@@ -19,7 +19,7 @@ export class WwnPartySheet extends FormApplication {
    * @type {String}
    */
   get title() {
-    return game.i18n.localize("WWN.dialog.partysheet");
+    return game.i18n.localize("SWN.dialog.partysheet");
   }
 
   /* -------------------------------------------- */
@@ -31,7 +31,7 @@ export class WwnPartySheet extends FormApplication {
   getData() {
     let data = {
       data: this.object,
-      config: CONFIG.WWN,
+      config: CONFIG.SWN,
       user: game.user,
       settings: settings
     };
@@ -52,11 +52,11 @@ export class WwnPartySheet extends FormApplication {
   /* -------------------------------------------- */
 
   async _dealXP(ev) {
-    new WwnPartyXP(this.object, {}).render(true);
+    new SwnPartyXP(this.object, {}).render(true);
   }
 
   async _selectActors(ev) {
-    const template = "/systems/wwn/templates/apps/party-select.html";
+    const template = "/systems/swn/templates/apps/party-select.html";
     const templateData = {
       actors: this.object.entities
     }
@@ -67,12 +67,12 @@ export class WwnPartySheet extends FormApplication {
       buttons: {
         set: {
           icon: '<i class="fas fa-save"></i>',
-          label: game.i18n.localize("WWN.Update"),
+          label: game.i18n.localize("SWN.Update"),
           callback: (html) => {
             let checks = html.find("input[data-action='select-actor']");
             checks.each(async (_, c) => {
               let key = c.getAttribute('name');
-              await this.object.entities[key].setFlag('wwn', 'party', c.checked);
+              await this.object.entities[key].setFlag('swn', 'party', c.checked);
             });
           },
         },

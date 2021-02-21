@@ -1,7 +1,7 @@
 /**
  * Extend the basic ItemSheet with some very simple modifications
  */
-export class WwnItemSheet extends ItemSheet {
+export class SwnItemSheet extends ItemSheet {
   constructor(...args) {
     super(...args);
 
@@ -17,7 +17,7 @@ export class WwnItemSheet extends ItemSheet {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["wwn", "sheet", "item"],
+      classes: ["swn", "sheet", "item"],
       width: 550,
       height: 510,
       resizable: false,
@@ -35,7 +35,7 @@ export class WwnItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/wwn/templates/items/";
+    const path = "systems/swn/templates/items/";
     return `${path}/${this.item.data.type}-sheet.html`;
   }
 
@@ -45,7 +45,7 @@ export class WwnItemSheet extends ItemSheet {
    */
   getData() {
     const data = super.getData();
-    data.config = CONFIG.WWN;
+    data.config = CONFIG.SWN;
     return data;
   }
 

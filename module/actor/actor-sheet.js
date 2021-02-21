@@ -1,7 +1,7 @@
-import { WwnActor } from "./entity.js";
-import { WwnEntityTweaks } from "../dialog/entity-tweaks.js";
+import { SwnActor } from "./entity.js";
+import { SwnEntityTweaks } from "../dialog/entity-tweaks.js";
 
-export class WwnActorSheet extends ActorSheet {
+export class SwnActorSheet extends ActorSheet {
   constructor(...args) {
     super(...args);
   }
@@ -10,7 +10,7 @@ export class WwnActorSheet extends ActorSheet {
   getData() {
     const data = super.getData();
 
-    data.config = CONFIG.WWN;
+    data.config = CONFIG.SWN;
     // Settings
 
     // Prepare owned items
@@ -269,7 +269,7 @@ export class WwnActorSheet extends ActorSheet {
 
   _onConfigureActor(event) {
     event.preventDefault();
-    new WwnEntityTweaks(this.actor, {
+    new SwnEntityTweaks(this.actor, {
       top: this.position.top + 40,
       left: this.position.left + (this.position.width - 400) / 2,
     }).render(true);
@@ -287,7 +287,7 @@ export class WwnActorSheet extends ActorSheet {
     if (this.options.editable && canConfigure) {
       buttons = [
         {
-          label: game.i18n.localize("WWN.dialog.tweaks"),
+          label: game.i18n.localize("SWN.dialog.tweaks"),
           class: "configure-actor",
           icon: "fas fa-code",
           onclick: (ev) => this._onConfigureActor(ev),

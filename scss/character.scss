@@ -3,7 +3,7 @@
 /* ----------------------------------------- */
 /*  Basic Structure                          */
 /* ----------------------------------------- */
-.wwn.sheet.actor.character {
+.swn.sheet.actor.character {
   min-width: 450px;
   min-height: 550px;
 
@@ -98,7 +98,7 @@
     }
     .health {
       &.armor-class {
-        background: url('/systems/wwn/assets/shield.png') no-repeat center;
+        background: url('/systems/swn/assets/shield.png') no-repeat center;
         background-size: 70px;
         .shield {
           text-align: right;
@@ -130,12 +130,12 @@
           right: calc(50% + -20px);
         }
         .health-empty {
-          background: url('/systems/wwn/assets/heart_empty.png') no-repeat center;
+          background: url('/systems/swn/assets/heart_empty.png') no-repeat center;
           background-size: 70px;
           background-position: top;
         }
         .health-full {
-          background: url('/systems/wwn/assets/heart_full.png') no-repeat center;
+          background: url('/systems/swn/assets/heart_full.png') no-repeat center;
           background-size: 70px;
           background-position: bottom;
         }

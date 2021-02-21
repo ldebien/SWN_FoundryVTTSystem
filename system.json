@@ -8,10 +8,10 @@
   "templateVersion": 5.7,
   "author": "LoloDev",
   "esmodules": [
-    "wwn.js"
+    "swn.js"
   ],
   "styles": [
-    "wwn.css"
+    "swn.css"
   ],
   "packs": [
     {

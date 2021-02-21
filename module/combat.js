@@ -1,10 +1,10 @@
-export class WwnCombat {
+export class SwnCombat {
   static rollInitiative(combat, data) {
     // Check groups
     data.combatants = [];
     let groups = {};
     combat.data.combatants.forEach((cbt) => {
-      groups[cbt.flags.wwn.group] = { present: true };
+      groups[cbt.flags.swn.group] = { present: true };
       data.combatants.push(cbt);
     });
 
@@ -12,7 +12,7 @@ export class WwnCombat {
     Object.keys(groups).forEach((group) => {
       let roll = new Roll("1d8").roll();
       roll.toMessage({
-        flavor: game.i18n.format('WWN.roll.initiative', { group: CONFIG["WWN"].colors[group] }),
+        flavor: game.i18n.format('SWN.roll.initiative', { group: CONFIG["SWN"].colors[group] }),
       });
       groups[group].initiative = roll.total;
     });
@@ -26,14 +26,14 @@ export class WwnCombat {
         data.combatants[i].initiative = -789;
       } else {
         data.combatants[i].initiative =
-          groups[data.combatants[i].flags.wwn.group].initiative;
+          groups[data.combatants[i].flags.swn.group].initiative;
       }
     }
     combat.setupTurns();
   }
 
   static async resetInitiative(combat, data) {
-    let reroll = game.settings.get("wwn", "rerollInitiative");
+    let reroll = game.settings.get("swn", "rerollInitiative");
     if (!["reset", "reroll"].includes(reroll)) {
       return;
     }
@@ -66,7 +66,7 @@ export class WwnCombat {
           token: c.token._id,
           alias: c.token.name
         },
-        flavor: game.i18n.format('WWN.roll.individualInit', { name: c.token.name })
+        flavor: game.i18n.format('SWN.roll.individualInit', { name: c.token.name })
       }, {});
       const chatData = roll.toMessage(messageData, { rollMode, create: false });
 
@@ -94,18 +94,18 @@ export class WwnCombat {
       // Append spellcast and retreat
       const controls = $(ct).find(".combatant-controls .combatant-control");
       const cmbtant = object.combat.getCombatant(ct.dataset.combatantId);
-      const moveActive = cmbtant.flags.wwn && cmbtant.flags.wwn.moveInCombat ? "active" : "";
+      const moveActive = cmbtant.flags.swn && cmbtant.flags.swn.moveInCombat ? "active" : "";
       controls.eq(1).after(
         `<a class='combatant-control move-combat ${moveActive}'><i class='fas fa-walking'></i></a>`
       );
-      const spellActive = cmbtant.flags.wwn && cmbtant.flags.wwn.prepareSpell ? "active" : "";
+      const spellActive = cmbtant.flags.swn && cmbtant.flags.swn.prepareSpell ? "active" : "";
       controls.eq(1).after(
         `<a class='combatant-control prepare-spell ${spellActive}'><i class='fas fa-magic'></i></a>`
       );
     });
-    WwnCombat.announceListener(html);
+    SwnCombat.announceListener(html);
 
-    let init = game.settings.get("wwn", "initiative") === "group";
+    let init = game.settings.get("swn", "initiative") === "group";
     if (!init) {
       return;
     }
@@ -125,19 +125,19 @@ export class WwnCombat {
 
       // Get group color
       const cmbtant = object.combat.getCombatant(ct.dataset.combatantId);
-      let color = cmbtant.flags.wwn.group;
+      let color = cmbtant.flags.swn.group;
 
       // Append colored flag
       let controls = $(ct).find(".combatant-controls");
       controls.prepend(
-        `<a class='combatant-control flag' style='color:${color}' title="${CONFIG.WWN.colors[color]}"><i class='fas fa-flag'></i></a>`
+        `<a class='combatant-control flag' style='color:${color}' title="${CONFIG.SWN.colors[color]}"><i class='fas fa-flag'></i></a>`
       );
     });
-    WwnCombat.addListeners(html);
+    SwnCombat.addListeners(html);
   }
 
   static updateCombatant(combat, combatant, data) {
-    let init = game.settings.get("wwn", "initiative");
+    let init = game.settings.get("swn", "initiative");
     // Why do you reroll ?
     if (combatant.actor.data.data.isSlow) {
       data.initiative = -789;
@@ -151,7 +151,7 @@ export class WwnCombat {
           ct.initiative &&
           ct.initiative != "-789.00" &&
           ct._id != data._id &&
-          ct.flags.wwn.group == combatant.flags.wwn.group
+          ct.flags.swn.group == combatant.flags.swn.group
         ) {
           groupInit = ct.initiative;
           // Set init
@@ -169,7 +169,7 @@ export class WwnCombat {
       let isActive = ev.currentTarget.classList.contains('active');
       game.combat.updateCombatant({
         _id: id,
-        flags: { wwn: { prepareSpell: !isActive } },
+        flags: { swn: { prepareSpell: !isActive } },
       });
     });
     html.find(".combatant-control.move-combat").click((ev) => {
@@ -179,7 +179,7 @@ export class WwnCombat {
       let isActive = ev.currentTarget.classList.contains('active');
       game.combat.updateCombatant({
         _id: id,
-        flags: { wwn: { moveInCombat: !isActive } },
+        flags: { swn: { moveInCombat: !isActive } },
       });
     })
   }
@@ -191,7 +191,7 @@ export class WwnCombat {
         return;
       }
       let currentColor = ev.currentTarget.style.color;
-      let colors = Object.keys(CONFIG.WWN.colors);
+      let colors = Object.keys(CONFIG.SWN.colors);
       let index = colors.indexOf(currentColor);
       if (index + 1 == colors.length) {
         index = 0;
@@ -201,7 +201,7 @@ export class WwnCombat {
       let id = $(ev.currentTarget).closest(".combatant")[0].dataset.combatantId;
       game.combat.updateCombatant({
         _id: id,
-        flags: { wwn: { group: colors[index] } },
+        flags: { swn: { group: colors[index] } },
       });
     });
 
@@ -210,7 +210,7 @@ export class WwnCombat {
         return;
       }
       let data = {};
-      WwnCombat.rollInitiative(game.combat, data);
+      SwnCombat.rollInitiative(game.combat, data);
       game.combat.update({ data: data }).then(() => {
         game.combat.setupTurns();
       });
@@ -232,7 +232,7 @@ export class WwnCombat {
         break;
     }
     data.flags = {
-      wwn: {
+      swn: {
         group: color,
       },
     };
@@ -247,28 +247,28 @@ export class WwnCombat {
     options.unshift({
       name: "Set Active",
       icon: '<i class="fas fa-star-of-life"></i>',
-      callback: WwnCombat.activateCombatant
+      callback: SwnCombat.activateCombatant
     });
   }
 
   static async preUpdateCombat(combat, data, diff, id) {
-    let init = game.settings.get("wwn", "initiative");
-    let reroll = game.settings.get("wwn", "rerollInitiative");
+    let init = game.settings.get("swn", "initiative");
+    let reroll = game.settings.get("swn", "rerollInitiative");
     if (!data.round) {
       return;
     }
     if (data.round !== 1) {
       if (reroll === "reset") {
-        WwnCombat.resetInitiative(combat, data, diff, id);
+        SwnCombat.resetInitiative(combat, data, diff, id);
         return;
       } else if (reroll === "keep") {
         return;
       }
     }
     if (init === "group") {
-      WwnCombat.rollInitiative(combat, data, diff, id);
+      SwnCombat.rollInitiative(combat, data, diff, id);
     } else if (init === "individual") {
-      WwnCombat.individualInitiative(combat, data, diff, id);
+      SwnCombat.individualInitiative(combat, data, diff, id);
     }
   }
 }

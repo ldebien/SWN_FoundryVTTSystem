@@ -1,10 +1,10 @@
-import { WwnActor } from "./entity.js";
-import { WwnActorSheet } from "./actor-sheet.js";
+import { SwnActor } from "./entity.js";
+import { SwnActorSheet } from "./actor-sheet.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  */
-export class WwnActorSheetMonster extends WwnActorSheet {
+export class SwnActorSheetMonster extends SwnActorSheet {
   constructor(...args) {
     super(...args);
   }
@@ -17,8 +17,8 @@ export class WwnActorSheetMonster extends WwnActorSheet {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["wwn", "sheet", "monster", "actor"],
-      template: "systems/wwn/templates/actors/monster-sheet.html",
+      classes: ["swn", "sheet", "monster", "actor"],
+      template: "systems/swn/templates/actors/monster-sheet.html",
       width: 450,
       height: 560,
       resizable: true,
@@ -44,7 +44,7 @@ export class WwnActorSheetMonster extends WwnActorSheet {
     const data = super.getData();
 
     // Settings
-    data.config.morale = game.settings.get("wwn", "morale");
+    data.config.morale = game.settings.get("swn", "morale");
     if (!data.data.details.hasOwnProperty('instinctTable')) {
       data.data.details.instinctTable = {
         "table": "",
@@ -84,17 +84,17 @@ export class WwnActorSheetMonster extends WwnActorSheet {
   async _chooseItemType(choices = ["weapon", "armor", "shield", "gear"]) {
     let templateData = { types: choices },
       dlg = await renderTemplate(
-        "systems/wwn/templates/items/entity-create.html",
+        "systems/swn/templates/items/entity-create.html",
         templateData
       );
     //Create Dialog window
     return new Promise((resolve) => {
       new Dialog({
-        title: game.i18n.localize("WWN.dialog.createItem"),
+        title: game.i18n.localize("SWN.dialog.createItem"),
         content: dlg,
         buttons: {
           ok: {
-            label: game.i18n.localize("WWN.Ok"),
+            label: game.i18n.localize("SWN.Ok"),
             icon: '<i class="fas fa-check"></i>',
             callback: (html) => {
               resolve({
@@ -105,7 +105,7 @@ export class WwnActorSheetMonster extends WwnActorSheet {
           },
           cancel: {
             icon: '<i class="fas fa-times"></i>',
-            label: game.i18n.localize("WWN.Cancel"),
+            label: game.i18n.localize("SWN.Cancel"),
           },
         },
         default: "ok",
@@ -240,7 +240,7 @@ export class WwnActorSheetMonster extends WwnActorSheet {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.getOwnedItem(li.data("itemId"));
       let currentColor = item.data.data.pattern;
-      let colors = Object.keys(CONFIG.WWN.colors);
+      let colors = Object.keys(CONFIG.SWN.colors);
       let index = colors.indexOf(currentColor);
       if (index + 1 == colors.length) {
         index = 0;

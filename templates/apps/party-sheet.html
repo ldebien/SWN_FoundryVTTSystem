@@ -6,16 +6,16 @@
     {{#if user.isGM}}
     <div class="item-controls flexrow">
       <div class="item-control">
-        <button type="button" class="deal-xp" title="{{localize 'WWN.dialog.xp.deal'}}"><i class="fas fa-hand-holding"></i></button>
+        <button type="button" class="deal-xp" title="{{localize 'SWN.dialog.xp.deal'}}"><i class="fas fa-hand-holding"></i></button>
       </div>
       <div class="item-control">
-        <button type="button" class="select-actors" title="{{localize 'WWN.dialog.selectActors'}}"><i class="fas fa-users"></i></button>
+        <button type="button" class="select-actors" title="{{localize 'SWN.dialog.selectActors'}}"><i class="fas fa-users"></i></button>
       </div>
     </div>
     {{/if}}
   </div>
   <ol class="actor-list">
-    {{#each data.entities as |e|}} {{#if e.data.flags.wwn.party}}
+    {{#each data.entities as |e|}} {{#if e.data.flags.swn.party}}
     <li class="actor flexrow" data-actor-id="{{e.id}}">
       <div class="field-img">
         <img src="{{e.img}}" />
@@ -28,36 +28,36 @@
           <div class="field-name flex2">
             <strong>{{e.name}}</strong>
           </div>
-          <div class="field-long" title="{{localize 'WWN.Health'}}">
+          <div class="field-long" title="{{localize 'SWN.Health'}}">
             <i class="fas fa-heart"></i>
             {{e.data.data.hp.value}}/{{e.data.data.hp.max}}
           </div>
-          <div class="field-short" title="{{localize 'WWN.ArmorClass'}}">
+          <div class="field-short" title="{{localize 'SWN.ArmorClass'}}">
             <i class="fas fa-shield-alt"></i>
             <strong>{{e.data.data.aac.value}}</strong>
             <sub>{{e.data.data.aac.naked}}</sub>
           </div>
         </div>
         <div class="flexrow field-row">
-          <div class="field-short" title="{{localize 'WWN.AB'}}">
+          <div class="field-short" title="{{localize 'SWN.AB'}}">
             <i class="fas fa-crosshairs"></i>
             <!-- {{e.data.data.thac0.value}} -->
             {{e.data.data.thac0.bba}}
           </div>
           {{#if (eq e.data.type 'character')}}
-          <div class="field-short" title="{{localize 'WWN.Melee'}}">
+          <div class="field-short" title="{{localize 'SWN.Melee'}}">
             <i class="fas fa-fist-raised"></i>
             {{add e.data.data.scores.str.mod e.data.data.thac0.bba}}
           </div>
-          <div class="field-short" title="{{localize 'WWN.Missile'}}">
+          <div class="field-short" title="{{localize 'SWN.Missile'}}">
             <i class="fas fa-bullseye"></i>
             {{add e.data.data.scores.dex.mod e.data.data.thac0.bba}}
           </div>
           {{/if}}
           <div class="field-short flex2">
-            <i class="fas fa-shoe-prints" title="{{localize 'WWN.movement.base'}}"></i>
-            <span title="{{localize 'WWN.movement.encounter.long'}}">{{e.data.data.movement.encounter}}</span> <sub
-              title="{{localize 'WWN.movement.exploration.long'}}">{{e.data.data.movement.base}}</sub>
+            <i class="fas fa-shoe-prints" title="{{localize 'SWN.movement.base'}}"></i>
+            <span title="{{localize 'SWN.movement.encounter.long'}}">{{e.data.data.movement.encounter}}</span> <sub
+              title="{{localize 'SWN.movement.exploration.long'}}">{{e.data.data.movement.base}}</sub>
           </div>
         </div>
         <div class="flexrow field-row">

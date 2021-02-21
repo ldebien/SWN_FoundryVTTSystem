@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
-import { WwnActor } from '../actor/entity.js';
+import { SwnActor } from '../actor/entity.js';
 
-export class WwnEntityTweaks extends FormApplication {
+export class SwnEntityTweaks extends FormApplication {
   static get defaultOptions() {
     const options = super.defaultOptions;
     options.id = 'sheet-tweaks';
     options.template =
-      'systems/wwn/templates/actors/dialogs/tweaks-dialog.html';
+      'systems/swn/templates/actors/dialogs/tweaks-dialog.html';
     options.width = 580;
     return options;
   }
@@ -18,7 +18,7 @@ export class WwnEntityTweaks extends FormApplication {
    * @type {String}
    */
   get title() {
-    return `${this.object.name}: ${game.i18n.localize('WWN.dialog.tweaks')}`;
+    return `${this.object.name}: ${game.i18n.localize('SWN.dialog.tweaks')}`;
   }
 
   /* -------------------------------------------- */
@@ -33,7 +33,7 @@ export class WwnEntityTweaks extends FormApplication {
       data.isCharacter = true;
     }
     data.user = game.user;
-    data.config = CONFIG.WWN;
+    data.config = CONFIG.SWN;
     return data;
   }
 

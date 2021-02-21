@@ -1,9 +1,9 @@
-import { WwnDice } from "../dice.js";
+import { SwnDice } from "../dice.js";
 
 /**
  * Override and extend the basic :class:`Item` implementation
  */
-export class WwnItem extends Item {
+export class SwnItem extends Item {
   /* -------------------------------------------- */
   /*	Data Preparation														*/
   /* -------------------------------------------- */
@@ -15,22 +15,22 @@ export class WwnItem extends Item {
     let img = CONST.DEFAULT_TOKEN;
     switch (this.data.type) {
       case "spell":
-        img = "/systems/wwn/assets/default/spell.png";
+        img = "/systems/swn/assets/default/spell.png";
         break;
       case "art":
-        img = "/systems/wwn/assets/default/art.png";
+        img = "/systems/swn/assets/default/art.png";
         break;
       case "armor":
-        img = "/systems/wwn/assets/default/armor.png";
+        img = "/systems/swn/assets/default/armor.png";
         break;
       case "weapon":
-        img = "/systems/wwn/assets/default/weapon.png";
+        img = "/systems/swn/assets/default/weapon.png";
         break;
       case "item":
-        img = "/systems/wwn/assets/default/item.png";
+        img = "/systems/swn/assets/default/item.png";
         break;
       case "focus":
-        img = "/systems/wwn/assets/default/focus.png";
+        img = "/systems/swn/assets/default/focus.png";
         break;
     }
     if (!this.data.img) this.data.img = img;
@@ -141,14 +141,14 @@ export class WwnItem extends Item {
     };
 
     // Roll and return
-    return WwnDice.Roll({
+    return SwnDice.Roll({
       event: options.event,
       parts: rollParts,
       data: newData,
       skipDialog: true,
       speaker: ChatMessage.getSpeaker({ actor: this }),
-      flavor: game.i18n.format("WWN.roll.formula", { label: label }),
-      title: game.i18n.format("WWN.roll.formula", { label: label }),
+      flavor: game.i18n.format("SWN.roll.formula", { label: label }),
+      title: game.i18n.format("SWN.roll.formula", { label: label }),
     });
   }
 
@@ -179,7 +179,7 @@ export class WwnItem extends Item {
         data.tags.forEach((t) => {
           wTags += formatTag(t.value);
         });
-        wTags += formatTag(CONFIG.WWN.saves[data.save], "fa-skull");
+        wTags += formatTag(CONFIG.SWN.saves[data.save], "fa-skull");
         if (data.missile) {
           wTags += formatTag(
             data.range.short + "/" + data.range.medium + "/" + data.range.long,
@@ -188,7 +188,7 @@ export class WwnItem extends Item {
         }
         return wTags;
       case "armor":
-        return `${formatTag(CONFIG.WWN.armor[data.type], "fa-tshirt")}`;
+        return `${formatTag(CONFIG.SWN.armor[data.type], "fa-tshirt")}`;
       case "item":
         return "";
       case "focus":
@@ -198,13 +198,13 @@ export class WwnItem extends Item {
           data.range
         )}${formatTag(data.duration)}${formatTag(data.roll)}`;
         if (data.save) {
-          sTags += formatTag(CONFIG.WWN.saves[data.save], "fa-skull");
+          sTags += formatTag(CONFIG.SWN.saves[data.save], "fa-skull");
         }
         return sTags;
       case "art":
         let roll = "";
         roll += data.roll ? data.roll : "";
-        roll += data.rollTarget ? CONFIG.WWN.roll_type[data.rollType] : "";
+        roll += data.rollTarget ? CONFIG.SWN.roll_type[data.rollType] : "";
         roll += data.rollTarget ? data.rollTarget : "";
         return `${formatTag(data.requirements)}${formatTag(roll)}`;
     }
@@ -233,13 +233,13 @@ export class WwnItem extends Item {
         }
         // Auto fill checkboxes
         switch (val) {
-          case CONFIG.WWN.tags.melee:
+          case CONFIG.SWN.tags.melee:
             newData.melee = true;
             break;
-          case CONFIG.WWN.tags.slow:
+          case CONFIG.SWN.tags.slow:
             newData.slow = true;
             break;
-          case CONFIG.WWN.tags.missile:
+          case CONFIG.SWN.tags.missile:
             newData.missile = true;
             break;
         }
@@ -296,11 +296,11 @@ export class WwnItem extends Item {
       hasDamage: this.hasDamage,
       isSpell: this.data.type === "spell",
       hasSave: this.hasSave,
-      config: CONFIG.WWN,
+      config: CONFIG.SWN,
     };
 
     // Render the chat card template
-    const template = `systems/wwn/templates/chat/item-card.html`;
+    const template = `systems/swn/templates/chat/item-card.html`;
     const html = await renderTemplate(template, templateData);
 
     // Basic chat message data

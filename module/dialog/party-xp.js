@@ -1,9 +1,9 @@
-export class WwnPartyXP extends FormApplication {
+export class SwnPartyXP extends FormApplication {
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["wwn", "dialog", "party-xp"],
-            template: "systems/wwn/templates/apps/party-xp.html",
+            classes: ["swn", "dialog", "party-xp"],
+            template: "systems/swn/templates/apps/party-xp.html",
             width: 280,
             height: 400,
             resizable: false,
@@ -17,7 +17,7 @@ export class WwnPartyXP extends FormApplication {
      * @type {String}
      */
     get title() {
-        return game.i18n.localize("WWN.dialog.xp.deal");
+        return game.i18n.localize("SWN.dialog.xp.deal");
     }
 
     /* -------------------------------------------- */
@@ -27,11 +27,11 @@ export class WwnPartyXP extends FormApplication {
      * @return {Object}
      */
     getData() {
-        const actors = this.object.entities.filter(e => e.data.type === "character" && e.data.flags.wwn && e.data.flags.wwn.party === true);
+        const actors = this.object.entities.filter(e => e.data.type === "character" && e.data.flags.swn && e.data.flags.swn.party === true);
         let data = {
             actors: actors,
             data: this.object,
-            config: CONFIG.WWN,
+            config: CONFIG.SWN,
             user: game.user,
             settings: settings
         };
@@ -52,7 +52,7 @@ export class WwnPartyXP extends FormApplication {
     /* -------------------------------------------- */
 
     _calculateShare(ev) {
-        const actors = this.object.entities.filter(e => e.data.type === "character" && e.data.flags.wwn && e.data.flags.wwn.party === true);
+        const actors = this.object.entities.filter(e => e.data.type === "character" && e.data.flags.swn && e.data.flags.swn.party === true);
         const toDeal = $(ev.currentTarget.parentElement).find('input[name="total"]').val();
         const html = $(this.form);
         let shares = 0;

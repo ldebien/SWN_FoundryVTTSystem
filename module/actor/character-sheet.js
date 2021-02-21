@@ -1,12 +1,12 @@
-import { WwnActor } from "./entity.js";
-import { WwnActorSheet } from "./actor-sheet.js";
-import { WwnCharacterModifiers } from "../dialog/character-modifiers.js";
-import { WwnCharacterCreator } from "../dialog/character-creation.js";
+import { SwnActor } from "./entity.js";
+import { SwnActorSheet } from "./actor-sheet.js";
+import { SwnCharacterModifiers } from "../dialog/character-modifiers.js";
+import { SwnCharacterCreator } from "../dialog/character-creation.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  */
-export class WwnActorSheetCharacter extends WwnActorSheet {
+export class SwnActorSheetCharacter extends SwnActorSheet {
   constructor(...args) {
     super(...args);
   }
@@ -19,8 +19,8 @@ export class WwnActorSheetCharacter extends WwnActorSheet {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["wwn", "sheet", "actor", "character"],
-      template: "systems/wwn/templates/actors/character-sheet.html",
+      classes: ["swn", "sheet", "actor", "character"],
+      template: "systems/swn/templates/actors/character-sheet.html",
       width: 470,
       height: 460,
       resizable: true,
@@ -35,7 +35,7 @@ export class WwnActorSheetCharacter extends WwnActorSheet {
   }
 
   generateScores() {
-    new WwnCharacterCreator(this.actor, {
+    new SwnCharacterCreator(this.actor, {
       top: this.position.top + 40,
       left: this.position.left + (this.position.width - 400) / 2,
     }).render(true);
@@ -48,10 +48,10 @@ export class WwnActorSheetCharacter extends WwnActorSheet {
   getData() {
     const data = super.getData();
 
-    data.config.initiative = game.settings.get("wwn", "initiative") != "group";
-    data.config.showMovement = game.settings.get("wwn", "showMovement");
-    data.config.currencyTypes = game.settings.get("wwn", "currencyTypes");
-    data.config.psychicSkills = game.settings.get("wwn", "psychicSkills");
+    data.config.initiative = game.settings.get("swn", "initiative") != "group";
+    data.config.showMovement = game.settings.get("swn", "showMovement");
+    data.config.currencyTypes = game.settings.get("swn", "currencyTypes");
+    data.config.psychicSkills = game.settings.get("swn", "psychicSkills");
 
     data.isNew = this.actor.isNew();
     return data;
@@ -59,12 +59,12 @@ export class WwnActorSheetCharacter extends WwnActorSheet {
 
 
   async _chooseLang() {
-    let languages = game.settings.get("wwn", "languageList");
+    let languages = game.settings.get("swn", "languageList");
     let choices = languages.split(",");
 
     let templateData = { choices: choices },
       dlg = await renderTemplate(
-        "/systems/wwn/templates/actors/dialogs/lang-create.html",
+        "/systems/swn/templates/actors/dialogs/lang-create.html",
         templateData
       );
     //Create Dialog window
@@ -74,7 +74,7 @@ export class WwnActorSheetCharacter extends WwnActorSheet {
         content: dlg,
         buttons: {
           ok: {
-            label: game.i18n.localize("WWN.Ok"),
+            label: game.i18n.localize("SWN.Ok"),
             icon: '<i class="fas fa-check"></i>',
             callback: (html) => {
               resolve({
@@ -84,7 +84,7 @@ export class WwnActorSheetCharacter extends WwnActorSheet {
           },
           cancel: {
             icon: '<i class="fas fa-times"></i>',
-            label: game.i18n.localize("WWN.Cancel"),
+            label: game.i18n.localize("SWN.Cancel"),
           },
         },
         default: "ok",
@@ -95,7 +95,7 @@ export class WwnActorSheetCharacter extends WwnActorSheet {
   _pushLang(table) {
     const data = this.actor.data.data;
     let update = duplicate(data[table]);
-    let language = game.settings.get("wwn", "languageList");
+    let language = game.settings.get("swn", "languageList");
     let languages = language.split(",");
     this._chooseLang().then((dialogInput) => {
       const name = languages[dialogInput.choice];
@@ -129,7 +129,7 @@ export class WwnActorSheetCharacter extends WwnActorSheet {
 
   _onShowModifiers(event) {
     event.preventDefault();
-    new WwnCharacterModifiers(this.actor, {
+    new SwnCharacterModifiers(this.actor, {
       top: this.position.top + 40,
       left: this.position.left + (this.position.width - 400) / 2,
     }).render(true);

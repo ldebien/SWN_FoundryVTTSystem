@@ -1,4 +1,4 @@
-<div class="wwn chat-card item-card" data-actor-id="{{actor._id}}" data-item-id="{{item._id}}"
+<div class="swn chat-card item-card" data-actor-id="{{actor._id}}" data-item-id="{{item._id}}"
     {{#if tokenId}}data-token-id="{{tokenId}}" {{/if}}>
     <header class="card-header flexrow">
         <img src="{{item.img}}" title="{{item.name}}" width="36" height="36" />
@@ -10,26 +10,26 @@
     </div>
 
     <div class="card-buttons">
-        {{#if hasAttack}}<button data-action="attack">{{ localize "WWN.Attack" }}</button>{{/if}}
+        {{#if hasAttack}}<button data-action="attack">{{ localize "SWN.Attack" }}</button>{{/if}}
 
         {{#if hasDamage}}
         <button data-action="damage">
             {{#if isHealing}}
-            {{ localize "WWN.Healing" }}
+            {{ localize "SWN.Healing" }}
             {{else}}
-            {{localize "WWN.Damage" }}
+            {{localize "SWN.Damage" }}
             {{/if}}
         </button>
         {{/if}}
 
         {{#if data.save}}
         <button data-action="save" data-save="{{data.save}}" disabled>
-            {{lookup config.saves data.save}} - {{localize "WWN.spells.Save"}}
+            {{lookup config.saves data.save}} - {{localize "SWN.spells.Save"}}
         </button>
         {{/if}}
 
         {{#if data.roll}}
-        <button data-action="formula">{{ localize "WWN.Roll"}} {{data.roll}} {{#if data.blindroll}}({{localize 'WWN.items.BlindRoll'}}){{/if}}</button>
+        <button data-action="formula">{{ localize "SWN.Roll"}} {{data.roll}} {{#if data.blindroll}}({{localize 'SWN.items.BlindRoll'}}){{/if}}</button>
         {{/if}}
     </div>
 

@@ -1,4 +1,4 @@
-export class WwnDice {
+export class SwnDice {
   static digestResult(data, roll) {
     let result = {
       isSuccess: false,
@@ -52,7 +52,7 @@ export class WwnDice {
     speaker = null,
     form = null,
   } = {}) {
-    const template = "systems/wwn/templates/chat/roll-result.html";
+    const template = "systems/swn/templates/chat/roll-result.html";
 
     let chatData = {
       user: game.user._id,
@@ -89,11 +89,11 @@ export class WwnDice {
       data.roll.blindroll = true;
     }
 
-    templateData.result = WwnDice.digestResult(data, roll);
+    templateData.result = SwnDice.digestResult(data, roll);
 
     return new Promise((resolve) => {
       roll.render().then((r) => {
-        templateData.rollWWN = r;
+        templateData.rollSWN = r;
         renderTemplate(template, templateData).then((content) => {
           chatData.content = content;
           // Dice So Nice
@@ -135,14 +135,14 @@ export class WwnDice {
 
     if (roll.total < targetAac) {
       result.details = game.i18n.format(
-        "WWN.messages.AttackAscendingFailure",
+        "SWN.messages.AttackAscendingFailure",
         {
           bonus: result.target,
         }
       );
       return result;
       }
-      result.details = game.i18n.format("WWN.messages.AttackAscendingSuccess", {
+      result.details = game.i18n.format("SWN.messages.AttackAscendingSuccess", {
         result: roll.total,
       });
       result.isSuccess = true;
@@ -158,7 +158,7 @@ export class WwnDice {
     speaker = null,
     form = null,
   } = {}) {
-    const template = "systems/wwn/templates/chat/roll-attack.html";
+    const template = "systems/swn/templates/chat/roll-attack.html";
 
     let chatData = {
       user: game.user._id,
@@ -169,7 +169,7 @@ export class WwnDice {
       title: title,
       flavor: flavor,
       data: data,
-      config: CONFIG.WWN,
+      config: CONFIG.SWN,
     };
 
     // Optionally include a situational bonus
@@ -195,11 +195,11 @@ export class WwnDice {
       data.roll.blindroll = true;
     }
 
-    templateData.result = WwnDice.digestAttackResult(data, roll);
+    templateData.result = SwnDice.digestAttackResult(data, roll);
 
     return new Promise((resolve) => {
       roll.render().then((r) => {
-        templateData.rollWWN = r;
+        templateData.rollSWN = r;
         dmgRoll.render().then((dr) => {
           templateData.rollDamage = dr;
           renderTemplate(template, templateData).then((content) => {
@@ -254,7 +254,7 @@ export class WwnDice {
     title = null,
   } = {}) {
     let rolled = false;
-    const template = "systems/wwn/templates/chat/roll-dialog.html";
+    const template = "systems/swn/templates/chat/roll-dialog.html";
     let dialogData = {
       formula: parts.join(" "),
       data: data,
@@ -269,21 +269,21 @@ export class WwnDice {
       flavor: flavor,
       speaker: speaker,
     };
-    if (skipDialog) { return WwnDice.sendRoll(rollData); }
+    if (skipDialog) { return SwnDice.sendRoll(rollData); }
 
     let buttons = {
       ok: {
-        label: game.i18n.localize("WWN.Roll"),
+        label: game.i18n.localize("SWN.Roll"),
         icon: '<i class="fas fa-dice-d20"></i>',
         callback: (html) => {
           rolled = true;
           rollData.form = html[0].querySelector("form");
-          roll = WwnDice.sendRoll(rollData);
+          roll = SwnDice.sendRoll(rollData);
         },
       },
       cancel: {
         icon: '<i class="fas fa-times"></i>',
-        label: game.i18n.localize("WWN.Cancel"),
+        label: game.i18n.localize("SWN.Cancel"),
         callback: (html) => { },
       },
     };
@@ -314,7 +314,7 @@ export class WwnDice {
     title = null,
   } = {}) {
     let rolled = false;
-    const template = "systems/wwn/templates/chat/roll-dialog.html";
+    const template = "systems/swn/templates/chat/roll-dialog.html";
     let dialogData = {
       formula: parts.join(" "),
       data: data,
@@ -331,25 +331,25 @@ export class WwnDice {
     };
     if (skipDialog) {
       return ["melee", "missile", "attack"].includes(data.roll.type)
-        ? WwnDice.sendAttackRoll(rollData)
-        : WwnDice.sendRoll(rollData);
+        ? SwnDice.sendAttackRoll(rollData)
+        : SwnDice.sendRoll(rollData);
     }
 
     let buttons = {
       ok: {
-        label: game.i18n.localize("WWN.Roll"),
+        label: game.i18n.localize("SWN.Roll"),
         icon: '<i class="fas fa-dice-d20"></i>',
         callback: (html) => {
           rolled = true;
           rollData.form = html[0].querySelector("form");
           roll = ["melee", "missile", "attack"].includes(data.roll.type)
-            ? WwnDice.sendAttackRoll(rollData)
-            : WwnDice.sendRoll(rollData);
+            ? SwnDice.sendAttackRoll(rollData)
+            : SwnDice.sendRoll(rollData);
         },
       },
       cancel: {
         icon: '<i class="fas fa-times"></i>',
-        label: game.i18n.localize("WWN.Cancel"),
+        label: game.i18n.localize("SWN.Cancel"),
         callback: (html) => { },
       },
     };

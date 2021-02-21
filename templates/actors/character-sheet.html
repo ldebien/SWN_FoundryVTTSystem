@@ -1,54 +1,54 @@
 <form class="{{cssClass}}" autocomplete="off">
   {{! Sheet Header }}
   <header class="sheet-header flexrow">
-    {{> "systems/wwn/templates/actors/partials/character-header.html"}}
+    {{> "systems/swn/templates/actors/partials/character-header.html"}}
   </header>
 
   {{! Sheet Tab Navigation }}
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="attributes">
-      {{localize "WWN.category.attributes"}}
+      {{localize "SWN.category.attributes"}}
     </a>
     <a class="item" data-tab="skills">
-      {{localize "WWN.category.skills"}}
+      {{localize "SWN.category.skills"}}
     </a>
     <a class="item" data-tab="foci">
-      {{localize "WWN.category.foci"}}
+      {{localize "SWN.category.foci"}}
     </a>
     {{#if data.spells.enabled}}
     <a class="item" data-tab="spells">
-      {{localize "WWN.category.spells"}}
+      {{localize "SWN.category.spells"}}
     </a>
     {{/if}}
     <a class="item" data-tab="inventory">
-      {{localize "WWN.category.inventory"}}
+      {{localize "SWN.category.inventory"}}
     </a>
     <a class="item" data-tab="notes">
-      {{localize "WWN.category.notes"}}
+      {{localize "SWN.category.notes"}}
     </a>
   </nav>
   {{! Sheet Body }}
   <section class="sheet-body">
     {{! Attributes Tab }}
     <div class="tab" data-group="primary" data-tab="attributes">
-      {{> "systems/wwn/templates/actors/partials/character-attributes-tab.html"}}
+      {{> "systems/swn/templates/actors/partials/character-attributes-tab.html"}}
     </div>
     <div class="tab" data-group="primary" data-tab="skills">
-      {{> "systems/wwn/templates/actors/partials/character-skills-tab.html"}}
+      {{> "systems/swn/templates/actors/partials/character-skills-tab.html"}}
     </div>
     <div class="tab" data-group="primary" data-tab="foci">
-      {{> "systems/wwn/templates/actors/partials/character-foci-tab.html"}}
+      {{> "systems/swn/templates/actors/partials/character-foci-tab.html"}}
     </div>
     {{#if data.spells.enabled}}
     <div class="tab" data-group="primary" data-tab="spells">
-      {{> "systems/wwn/templates/actors/partials/character-spells-tab.html"}}
+      {{> "systems/swn/templates/actors/partials/character-spells-tab.html"}}
     </div>
     {{/if}}
     <div class="tab" data-group="primary" data-tab="inventory">
-      {{> "systems/wwn/templates/actors/partials/character-inventory-tab.html"}}
+      {{> "systems/swn/templates/actors/partials/character-inventory-tab.html"}}
     </div>
     <div class="tab" data-group="primary" data-tab="notes">
-      {{> "systems/wwn/templates/actors/partials/character-notes-tab.html"}}
+      {{> "systems/swn/templates/actors/partials/character-notes-tab.html"}}
     </div>
   </section>
 </form>

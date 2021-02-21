@@ -1,50 +1,50 @@
 export const registerSettings = function () {
 
-  game.settings.register("wwn", "initiative", {
-    name: game.i18n.localize("WWN.Setting.Initiative"),
-    hint: game.i18n.localize("WWN.Setting.InitiativeHint"),
+  game.settings.register("swn", "initiative", {
+    name: game.i18n.localize("SWN.Setting.Initiative"),
+    hint: game.i18n.localize("SWN.Setting.InitiativeHint"),
     default: "group",
     scope: "world",
     type: String,
     config: true,
     choices: {
-      individual: "WWN.Setting.InitiativeIndividual",
-      group: "WWN.Setting.InitiativeGroup",
+      individual: "SWN.Setting.InitiativeIndividual",
+      group: "SWN.Setting.InitiativeGroup",
     },
     onChange: _ => window.location.reload()
   });
 
-  game.settings.register("wwn", "rerollInitiative", {
-    name: game.i18n.localize("WWN.Setting.RerollInitiative"),
-    hint: game.i18n.localize("WWN.Setting.RerollInitiativeHint"),
+  game.settings.register("swn", "rerollInitiative", {
+    name: game.i18n.localize("SWN.Setting.RerollInitiative"),
+    hint: game.i18n.localize("SWN.Setting.RerollInitiativeHint"),
     default: "keep",
     scope: "world",
     type: String,
     config: true,
     choices: {
-      keep: "WWN.Setting.InitiativeKeep",
-      reset: "WWN.Setting.InitiativeReset",
-      reroll: "WWN.Setting.InitiativeReroll",
+      keep: "SWN.Setting.InitiativeKeep",
+      reset: "SWN.Setting.InitiativeReset",
+      reroll: "SWN.Setting.InitiativeReroll",
     }
   });
 
-  game.settings.register("wwn", "movementRate", {
-    name: game.i18n.localize("WWN.Setting.MovementRate"),
-    hint: game.i18n.localize("WWN.Setting.MovementRateHint"),
-    default: "movewwn",
+  game.settings.register("swn", "movementRate", {
+    name: game.i18n.localize("SWN.Setting.MovementRate"),
+    hint: game.i18n.localize("SWN.Setting.MovementRateHint"),
+    default: "moveswn",
     scope: "world",
     type: String,
     config: true,
     choices: {
-      movewwn: "WWN.Setting.MoveWWN",
-      movebx: "WWN.Setting.MoveBX",
+      moveswn: "SWN.Setting.MoveSWN",
+      movebx: "SWN.Setting.MoveBX",
     },
     onChange: _ => window.location.reload()
   });
 
-  game.settings.register("wwn", "showMovement", {
-    name: game.i18n.localize("WWN.Setting.showMovement"),
-    hint: game.i18n.localize("WWN.Setting.showMovementHint"),
+  game.settings.register("swn", "showMovement", {
+    name: game.i18n.localize("SWN.Setting.showMovement"),
+    hint: game.i18n.localize("SWN.Setting.showMovementHint"),
     default: false,
     scope: "world",
     type: Boolean,
@@ -52,18 +52,18 @@ export const registerSettings = function () {
     onChange: _ => window.location.reload()
   });
 
-  game.settings.register("wwn", "morale", {
-    name: game.i18n.localize("WWN.Setting.Morale"),
-    hint: game.i18n.localize("WWN.Setting.MoraleHint"),
+  game.settings.register("swn", "morale", {
+    name: game.i18n.localize("SWN.Setting.Morale"),
+    hint: game.i18n.localize("SWN.Setting.MoraleHint"),
     default: true,
     scope: "world",
     type: Boolean,
     config: true,
   });
 
-  game.settings.register("wwn", "languageList", {
-    name: game.i18n.localize("WWN.Languages"),
-    hint: game.i18n.localize("WWN.LanguagesHint"),
+  game.settings.register("swn", "languageList", {
+    name: game.i18n.localize("SWN.Languages"),
+    hint: game.i18n.localize("SWN.LanguagesHint"),
     default: [
       "Trade Cant",
       "Ancient Vothian",
@@ -89,23 +89,23 @@ export const registerSettings = function () {
     onChange: _ => window.location.reload()
   });
 
-  game.settings.register("wwn", "currencyTypes", {
-    name: game.i18n.localize("WWN.items.Currency"),
-    hint: game.i18n.localize("WWN.items.CurrencyHint"),
-    default: "currencywwn",
+  game.settings.register("swn", "currencyTypes", {
+    name: game.i18n.localize("SWN.items.Currency"),
+    hint: game.i18n.localize("SWN.items.CurrencyHint"),
+    default: "currencyswn",
     scope: "world",
     type: String,
     config: true,
     choices: {
-      currencywwn: "WWN.Setting.CurrencyWWN",
-      currencybx: "WWN.Setting.CurrencyBX",
+      currencyswn: "SWN.Setting.CurrencySWN",
+      currencybx: "SWN.Setting.CurrencyBX",
     },
     onChange: _ => window.location.reload()
   });
   
-  game.settings.register("wwn", "psychicSkills", {
-    name: game.i18n.localize("WWN.Setting.psychicSkills"),
-    hint: game.i18n.localize("WWN.Setting.psychicSkillsHint"),
+  game.settings.register("swn", "psychicSkills", {
+    name: game.i18n.localize("SWN.Setting.psychicSkills"),
+    hint: game.i18n.localize("SWN.Setting.psychicSkillsHint"),
     default: false,
     scope: "world",
     type: Boolean,
