@@ -254,6 +254,9 @@
   "SWN.items.bank.long": "Bank (Silver)",
   "SWN.items.total.short": "Total (SP)",
   "SWN.items.total.long": "Total Silver Value",
+  "SWN.items.CR.long": "Credits",
+  "SWN.items.CR.short": "Cr",
+  "SWN.items.debts": "Debts",
   "SWN.items.TL": "TL",
   "SWN.items.Mag": "Mag.",
 
