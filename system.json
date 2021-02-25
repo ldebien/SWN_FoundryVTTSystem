@@ -55,6 +55,14 @@
       "entity": "Item"
     },
     {
+      "name": "focus-list",
+      "label": "Focus List",
+      "system": "swn",
+      "module": "swn",
+      "path": "packs/focus-list.db",
+      "entity": "Item"
+    },
+    {
       "name": "spells",
       "label": "Spells",
       "system": "swn",
