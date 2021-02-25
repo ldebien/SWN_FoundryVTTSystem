@@ -30,6 +30,13 @@
           />
         </div>
       </div>
+      <div class="form-group">
+        <label for="psychic">{{localize "SWN.Psychic"}}</label>
+        <div class="form-fields">
+          <input type="checkbox" name="data.psychicSkills" id="psychic" {{checked data.psychicSkills}}
+            data-dtype="Boolean" />
+        </div>
+      </div>
       {{#if (eq this.type 'character')}}
       <div class="form-group">
         <label for="retainer">{{localize "SWN.Retainer"}}</label>
