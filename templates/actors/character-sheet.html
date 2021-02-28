@@ -54,6 +54,11 @@
       {{> "systems/swn/templates/actors/partials/character-spells-tab.html"}}
     </div>
     {{/if}}
+    {{#if data.psychicSkills}}
+    <div class="tab" data-group="primary" data-tab="psychicSkills">
+      {{> "systems/swn/templates/actors/partials/character-psychic-skills-tab.html"}}
+    </div>
+    {{/if}}
     <div class="tab" data-group="primary" data-tab="inventory">
       {{> "systems/swn/templates/actors/partials/character-inventory-tab.html"}}
     </div>

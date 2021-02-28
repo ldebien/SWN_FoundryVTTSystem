@@ -10,6 +10,7 @@ export const preloadHandlebarsTemplates = async function () {
         'systems/swn/templates/actors/partials/character-skills-tab.html',
         'systems/swn/templates/actors/partials/character-foci-tab.html',
         'systems/swn/templates/actors/partials/character-spells-tab.html',
+        'systems/swn/templates/actors/partials/character-psychic-skills-tab.html',
         'systems/swn/templates/actors/partials/character-inventory-tab.html',
         'systems/swn/templates/actors/partials/character-notes-tab.html',
 

@@ -32,6 +32,9 @@ export class SwnItem extends Item {
       case "focus":
         img = "/systems/swn/assets/default/focus.png";
         break;
+      case "psychic":
+        img = "/systems/swn/assets/default/art.png";
+        break;
     }
     if (!this.data.img) this.data.img = img;
     super.prepareData();
@@ -58,6 +61,9 @@ export class SwnItem extends Item {
     if (this.data.type == "spell") {
       props.push(`${data.class} ${data.lvl}`, data.range, data.duration);
     }
+    /*if (this.data.type == "psychic") {
+      props.push(`${data.discipline}, ${data.ownedLvl}: ${data.description}`);
+    }*/
     if (data.hasOwnProperty("equipped")) {
       props.push(data.equipped ? "Equipped" : "Not Equipped");
     }
@@ -193,6 +199,8 @@ export class SwnItem extends Item {
         return "";
       case "focus":
         return "";
+      case "psychic":
+        return ""; 
       case "spell":
         let sTags = `${formatTag(data.class)}${formatTag(
           data.range
@@ -275,6 +283,7 @@ export class SwnItem extends Item {
       case "item":
       case "armor":
       case "focus":
+      case "psychic":
         this.show();
     }
   }
