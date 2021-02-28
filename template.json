@@ -349,7 +349,7 @@
     }
   },
   "Item": {
-    "types": ["item", "weapon", "armor", "spell", "art", "focus"],
+    "types": ["item", "weapon", "armor", "spell", "art", "focus", "psychic"],
     "item": {
       "description": "",
       "quantity": 1,
@@ -427,6 +427,11 @@
     },
     "focus": {
       "description": "",
+      "ownedLevel": 1
+    },
+    "psychic": {
+      "description": "",
+      "discipline": "",
       "ownedLevel": 1
     }
   }
